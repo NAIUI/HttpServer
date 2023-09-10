@@ -1,6 +1,6 @@
 #include <vector>
 
-void insertionSort(std::vector<int> nums){
+void InsertionSort(std::vector<int> nums){
     for (int i = 1; i < nums.size(); ++i){
         int flag = i;
         while (flag >= 0 && nums[flag] < nums[flag-1]){
