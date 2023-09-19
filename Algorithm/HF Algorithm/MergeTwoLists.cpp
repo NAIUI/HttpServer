@@ -1,4 +1,5 @@
 // Definition for singly-linked list.
+// 合并有序链表
 struct ListNode {
     int val;
     ListNode *next;

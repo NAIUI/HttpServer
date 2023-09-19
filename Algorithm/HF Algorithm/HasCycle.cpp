@@ -1,3 +1,4 @@
+// 链表有环判断
 struct ListNode {
     int val;
     ListNode *next;

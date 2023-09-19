@@ -1,4 +1,5 @@
 //https://leetcode.cn/problems/c32eOV/description/
+// 链表入环点问题
 struct ListNode {
     int val;
     ListNode *next;
