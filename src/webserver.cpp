@@ -39,6 +39,12 @@ void WebServer::initEventMode_(int trigMode) {
      * 处理完当前事件后，将文件描述符从 epoll 集合中摘除
      * 不会再收到这个文件描述符相关的事件，
      * 直到该文件描述符再次通过 epoll_ctl 重新加入。
+     * 一个线程读取某个socket上的数据后开始处理数据，在处理过程中该socket上又有新数据可读，
+     * 此时另一个线程被唤醒读取，此时出现两个线程处理同一个socket
+     * 我们期望的是一个socket连接在任一时刻都只被一个线程处理，
+     * 通过epoll_ctl对该文件描述符注册epolloneshot事件，
+     * 一个线程处理socket时，其他线程将无法处理，
+     * 当该线程处理完后，需要通过epoll_ctl重置epolloneshot事件
      * */
     connectionEvent_ = EPOLLONESHOT | EPOLLRDHUP;
     switch (trigMode)
