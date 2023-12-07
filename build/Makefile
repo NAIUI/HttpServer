@@ -258,6 +258,33 @@ src/epoller.cpp.s:
 	$(MAKE) -f CMakeFiles/myserver.dir/build.make CMakeFiles/myserver.dir/src/epoller.cpp.s
 .PHONY : src/epoller.cpp.s
 
+src/log.o: src/log.cpp.o
+
+.PHONY : src/log.o
+
+# target to build an object file
+src/log.cpp.o:
+	$(MAKE) -f CMakeFiles/myserver.dir/build.make CMakeFiles/myserver.dir/src/log.cpp.o
+.PHONY : src/log.cpp.o
+
+src/log.i: src/log.cpp.i
+
+.PHONY : src/log.i
+
+# target to preprocess a source file
+src/log.cpp.i:
+	$(MAKE) -f CMakeFiles/myserver.dir/build.make CMakeFiles/myserver.dir/src/log.cpp.i
+.PHONY : src/log.cpp.i
+
+src/log.s: src/log.cpp.s
+
+.PHONY : src/log.s
+
+# target to generate assembly for a file
+src/log.cpp.s:
+	$(MAKE) -f CMakeFiles/myserver.dir/build.make CMakeFiles/myserver.dir/src/log.cpp.s
+.PHONY : src/log.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -284,6 +311,33 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/myserver.dir/build.make CMakeFiles/myserver.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/sqlconnpool.o: src/sqlconnpool.cpp.o
+
+.PHONY : src/sqlconnpool.o
+
+# target to build an object file
+src/sqlconnpool.cpp.o:
+	$(MAKE) -f CMakeFiles/myserver.dir/build.make CMakeFiles/myserver.dir/src/sqlconnpool.cpp.o
+.PHONY : src/sqlconnpool.cpp.o
+
+src/sqlconnpool.i: src/sqlconnpool.cpp.i
+
+.PHONY : src/sqlconnpool.i
+
+# target to preprocess a source file
+src/sqlconnpool.cpp.i:
+	$(MAKE) -f CMakeFiles/myserver.dir/build.make CMakeFiles/myserver.dir/src/sqlconnpool.cpp.i
+.PHONY : src/sqlconnpool.cpp.i
+
+src/sqlconnpool.s: src/sqlconnpool.cpp.s
+
+.PHONY : src/sqlconnpool.s
+
+# target to generate assembly for a file
+src/sqlconnpool.cpp.s:
+	$(MAKE) -f CMakeFiles/myserver.dir/build.make CMakeFiles/myserver.dir/src/sqlconnpool.cpp.s
+.PHONY : src/sqlconnpool.cpp.s
 
 src/timer.o: src/timer.cpp.o
 
@@ -363,9 +417,15 @@ help:
 	@echo "... src/epoller.o"
 	@echo "... src/epoller.i"
 	@echo "... src/epoller.s"
+	@echo "... src/log.o"
+	@echo "... src/log.i"
+	@echo "... src/log.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/sqlconnpool.o"
+	@echo "... src/sqlconnpool.i"
+	@echo "... src/sqlconnpool.s"
 	@echo "... src/timer.o"
 	@echo "... src/timer.i"
 	@echo "... src/timer.s"

@@ -24,3 +24,6 @@ add_executable(myserver ${CPP_PATH})
 
 # 将线程库链接到可执行文件
 target_link_libraries(myserver ${CMAKE_THREAD_LIBS_INIT})
+# 链接MySQL库
+target_link_libraries(myserver mysqlclient)
+

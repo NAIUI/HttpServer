@@ -1,26 +1,44 @@
 #include "webserver.h"
 
 WebServer::WebServer(
-    int port,int trigMode,int timeoutMS,bool optLinger,int threadNum):
-    port_(port),
-    openLinger_(optLinger),
-    timeoutMS_(timeoutMS),
-    isClose_(false),
-    timer_(new TimerManager()),
-    threadpool_(new ThreadPool(threadNum)),
-    epoller_(new Epoller())
-{
+            int port, int trigMode, int timeoutMS, bool OptLinger,
+            int sqlPort, const char* sqlUser, const  char* sqlPwd,
+            const char* dbName, int connPoolNum, int threadNum,
+            bool openLog, int logLevel, int logQueSize):
+            port_(port), 
+            openLinger_(OptLinger), 
+            timeoutMS_(timeoutMS), 
+            isClose_(false),
+            timer_(new TimerManager()), 
+            threadpool_(new ThreadPool(threadNum)), 
+            epoller_(new Epoller())
+    {
     //获取当前工作目录的绝对路径
-    srcDir_ = getcwd(nullptr,256);
+    srcDir_ = getcwd(nullptr, 256);
     assert(srcDir_);
     //拼接字符串
-    strncat(srcDir_,"/resources/",16);
+    strncat(srcDir_, "/resources/", 16);
     HTTPconnection::userCount = 0;
     HTTPconnection::srcDir = srcDir_;
+    SqlConnPool::Instance()->Init("localhost", sqlPort, sqlUser, sqlPwd, dbName, connPoolNum);      // 数据库连接池
 
     initEventMode_(trigMode);
-    if(!initSocket_()) isClose_=true;
+    if(!initSocket_()) { isClose_ = true;}
 
+    if(openLog) {
+        Log::Instance()->init(logLevel, "./log", ".log", logQueSize);
+        if(isClose_) { LOG_ERROR("========== Server init error!=========="); }
+        else {
+            LOG_INFO("========== Server init ==========");
+            LOG_INFO("Port:%d, OpenLinger: %s", port_, OptLinger? "true":"false");
+            LOG_INFO("Listen Mode: %s, OpenConn Mode: %s",
+                            (listenEvent_ & EPOLLET ? "ET": "LT"),
+                            (connectionEvent_ & EPOLLET ? "ET": "LT"));
+            LOG_INFO("LogSys level: %d", logLevel);
+            LOG_INFO("srcDir: %s", HTTPconnection::srcDir);
+            LOG_INFO("SqlConnPool num: %d, ThreadPool num: %d", connPoolNum, threadNum);
+        }
+    }
 }
 
 WebServer::~WebServer()
@@ -28,6 +46,7 @@ WebServer::~WebServer()
     close(listenFd_);
     isClose_=true;
     free(srcDir_);
+    SqlConnPool::Instance()->ClosePool();
 }
 
 // 初始化监听socket与连接socket的属性
@@ -74,10 +93,9 @@ void WebServer::Start()
     int timeMS=-1;//epoll wait timeout==-1就是无事件一直阻塞
     if(!isClose_) 
     {
-        std::cout<<"============================";
-        std::cout<<"Server Start!";
-        std::cout<<"============================";
-        std::cout<<std::endl;
+        LOG_INFO("============================");
+        LOG_INFO("Server Start!");
+        LOG_INFO("============================");
     }
     while(!isClose_)
     {

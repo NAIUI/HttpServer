@@ -4,11 +4,19 @@
 CMakeFiles/myserver.dir/src/HTTPconnection.cpp.o: ../include/HTTPconnection.h
 CMakeFiles/myserver.dir/src/HTTPconnection.cpp.o: ../include/HTTPrequest.h
 CMakeFiles/myserver.dir/src/HTTPconnection.cpp.o: ../include/HTTPresponse.h
+CMakeFiles/myserver.dir/src/HTTPconnection.cpp.o: ../include/blockqueue.h
 CMakeFiles/myserver.dir/src/HTTPconnection.cpp.o: ../include/buffer.h
+CMakeFiles/myserver.dir/src/HTTPconnection.cpp.o: ../include/log.h
+CMakeFiles/myserver.dir/src/HTTPconnection.cpp.o: ../include/sqlconnRAII.h
+CMakeFiles/myserver.dir/src/HTTPconnection.cpp.o: ../include/sqlconnpool.h
 CMakeFiles/myserver.dir/src/HTTPconnection.cpp.o: ../src/HTTPconnection.cpp
 
 CMakeFiles/myserver.dir/src/HTTPrequest.cpp.o: ../include/HTTPrequest.h
+CMakeFiles/myserver.dir/src/HTTPrequest.cpp.o: ../include/blockqueue.h
 CMakeFiles/myserver.dir/src/HTTPrequest.cpp.o: ../include/buffer.h
+CMakeFiles/myserver.dir/src/HTTPrequest.cpp.o: ../include/log.h
+CMakeFiles/myserver.dir/src/HTTPrequest.cpp.o: ../include/sqlconnRAII.h
+CMakeFiles/myserver.dir/src/HTTPrequest.cpp.o: ../include/sqlconnpool.h
 CMakeFiles/myserver.dir/src/HTTPrequest.cpp.o: ../src/HTTPrequest.cpp
 
 CMakeFiles/myserver.dir/src/HTTPresponse.cpp.o: ../include/HTTPresponse.h
@@ -21,28 +29,51 @@ CMakeFiles/myserver.dir/src/buffer.cpp.o: ../src/buffer.cpp
 CMakeFiles/myserver.dir/src/epoller.cpp.o: ../include/epoller.h
 CMakeFiles/myserver.dir/src/epoller.cpp.o: ../src/epoller.cpp
 
+CMakeFiles/myserver.dir/src/log.cpp.o: ../include/blockqueue.h
+CMakeFiles/myserver.dir/src/log.cpp.o: ../include/buffer.h
+CMakeFiles/myserver.dir/src/log.cpp.o: ../include/log.h
+CMakeFiles/myserver.dir/src/log.cpp.o: ../src/log.cpp
+
 CMakeFiles/myserver.dir/src/main.cpp.o: ../include/HTTPconnection.h
 CMakeFiles/myserver.dir/src/main.cpp.o: ../include/HTTPrequest.h
 CMakeFiles/myserver.dir/src/main.cpp.o: ../include/HTTPresponse.h
+CMakeFiles/myserver.dir/src/main.cpp.o: ../include/blockqueue.h
 CMakeFiles/myserver.dir/src/main.cpp.o: ../include/buffer.h
 CMakeFiles/myserver.dir/src/main.cpp.o: ../include/epoller.h
+CMakeFiles/myserver.dir/src/main.cpp.o: ../include/log.h
+CMakeFiles/myserver.dir/src/main.cpp.o: ../include/sqlconnRAII.h
+CMakeFiles/myserver.dir/src/main.cpp.o: ../include/sqlconnpool.h
 CMakeFiles/myserver.dir/src/main.cpp.o: ../include/threadpool.h
 CMakeFiles/myserver.dir/src/main.cpp.o: ../include/timer.h
 CMakeFiles/myserver.dir/src/main.cpp.o: ../include/webserver.h
 CMakeFiles/myserver.dir/src/main.cpp.o: ../src/main.cpp
 
+CMakeFiles/myserver.dir/src/sqlconnpool.cpp.o: ../include/blockqueue.h
+CMakeFiles/myserver.dir/src/sqlconnpool.cpp.o: ../include/buffer.h
+CMakeFiles/myserver.dir/src/sqlconnpool.cpp.o: ../include/log.h
+CMakeFiles/myserver.dir/src/sqlconnpool.cpp.o: ../include/sqlconnpool.h
+CMakeFiles/myserver.dir/src/sqlconnpool.cpp.o: ../src/sqlconnpool.cpp
+
 CMakeFiles/myserver.dir/src/timer.cpp.o: ../include/HTTPconnection.h
 CMakeFiles/myserver.dir/src/timer.cpp.o: ../include/HTTPrequest.h
 CMakeFiles/myserver.dir/src/timer.cpp.o: ../include/HTTPresponse.h
+CMakeFiles/myserver.dir/src/timer.cpp.o: ../include/blockqueue.h
 CMakeFiles/myserver.dir/src/timer.cpp.o: ../include/buffer.h
+CMakeFiles/myserver.dir/src/timer.cpp.o: ../include/log.h
+CMakeFiles/myserver.dir/src/timer.cpp.o: ../include/sqlconnRAII.h
+CMakeFiles/myserver.dir/src/timer.cpp.o: ../include/sqlconnpool.h
 CMakeFiles/myserver.dir/src/timer.cpp.o: ../include/timer.h
 CMakeFiles/myserver.dir/src/timer.cpp.o: ../src/timer.cpp
 
 CMakeFiles/myserver.dir/src/webserver.cpp.o: ../include/HTTPconnection.h
 CMakeFiles/myserver.dir/src/webserver.cpp.o: ../include/HTTPrequest.h
 CMakeFiles/myserver.dir/src/webserver.cpp.o: ../include/HTTPresponse.h
+CMakeFiles/myserver.dir/src/webserver.cpp.o: ../include/blockqueue.h
 CMakeFiles/myserver.dir/src/webserver.cpp.o: ../include/buffer.h
 CMakeFiles/myserver.dir/src/webserver.cpp.o: ../include/epoller.h
+CMakeFiles/myserver.dir/src/webserver.cpp.o: ../include/log.h
+CMakeFiles/myserver.dir/src/webserver.cpp.o: ../include/sqlconnRAII.h
+CMakeFiles/myserver.dir/src/webserver.cpp.o: ../include/sqlconnpool.h
 CMakeFiles/myserver.dir/src/webserver.cpp.o: ../include/threadpool.h
 CMakeFiles/myserver.dir/src/webserver.cpp.o: ../include/timer.h
 CMakeFiles/myserver.dir/src/webserver.cpp.o: ../include/webserver.h

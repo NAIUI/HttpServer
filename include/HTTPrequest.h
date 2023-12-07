@@ -7,6 +7,8 @@
 #include <regex>
 
 #include "buffer.h"
+#include "log.h"
+#include "sqlconnRAII.h"
 
 class HTTPrequest
 {
@@ -52,6 +54,9 @@ private:
 
     void parsePath_();                                      // 在解析请求行的时候，会解析出路径信息
     void parsePost_();                                      // POST请求
+    void parseFromUrlencoded_();                            
+
+    static bool userVerify(const std::string& name, const std::string& pwd, bool isLogin);
 
     static int convertHex(char ch);
 
@@ -61,6 +66,7 @@ private:
     std::unordered_map<std::string,std::string> post_;                  // post 已经解析出来的信息
 
     static const std::unordered_set<std::string> DEFAULT_HTML;          // 默认的网页名称
+    static const std::unordered_map<std::string, int> DEFAULT_HTML_TAG; // 登录和注册页面
 
 };
 

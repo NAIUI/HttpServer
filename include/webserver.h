@@ -14,10 +14,19 @@
 #include "timer.h"
 #include "threadpool.h"
 #include "HTTPconnection.h"
+#include "sqlconnRAII.h"
+#include "log.h"
 
 class WebServer {
 public:
-    WebServer(int port,int trigMode,int timeoutMS,bool optLinger,int threadNum);
+    // WebServer(int port,int trigMode,int timeoutMS,bool optLinger,int threadNum);
+
+    WebServer(
+    int port, int trigMode, int timeoutMS, bool OptLinger, 
+    int sqlPort, const char* sqlUser, const  char* sqlPwd, 
+    const char* dbName, int connPoolNum, int threadNum,
+    bool openLog, int logLevel, int logQueSize);
+
     ~WebServer();
 
     void Start(); //一切的开始

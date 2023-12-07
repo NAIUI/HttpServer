@@ -6,7 +6,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/myserver.dir/src/HTTPresponse.cpp.o"
   "CMakeFiles/myserver.dir/src/buffer.cpp.o"
   "CMakeFiles/myserver.dir/src/epoller.cpp.o"
+  "CMakeFiles/myserver.dir/src/log.cpp.o"
   "CMakeFiles/myserver.dir/src/main.cpp.o"
+  "CMakeFiles/myserver.dir/src/sqlconnpool.cpp.o"
   "CMakeFiles/myserver.dir/src/timer.cpp.o"
   "CMakeFiles/myserver.dir/src/webserver.cpp.o"
 )
