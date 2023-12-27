@@ -1,8 +1,6 @@
 # WebServer
 用C++实现的高性能WEB服务器
 
-* 实现循环缓冲区
-
 ## 致谢
 Linux高性能服务器编程，游双著.
 @[markparticle](https://github.com/markparticle/WebServer/)   
